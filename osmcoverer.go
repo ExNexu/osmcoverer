@@ -143,6 +143,7 @@ func main() {
     var cellFeature *geojson.Feature
     if len(cellIds) > 0 {
       cellFeature = geojson.NewMultiPolygonFeature(cellGeometry...)
+      fmt.Println(strings.Join(cellIds, ", ")) // prints s2 cellIds
       cellFeature.SetProperty("cellids", cellIds)
       cellFeature.SetProperty("stroke-width", 1)
       cellFeature.SetProperty("fill-opacity", 0.3)
